@@ -6,8 +6,15 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		44C3EB4E18CEF23F0068C59F /* CCFileManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 44C3EB4C18CEF23F0068C59F /* CCFileManager.cpp */; };
+		44C3EB4F18CEF23F0068C59F /* CCFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 44C3EB4D18CEF23F0068C59F /* CCFileManager.h */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		44C3EB4518CEEA790068C59F /* liblccJoyc++.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblccJoyc++.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44C3EB4C18CEF23F0068C59F /* CCFileManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCFileManager.cpp; path = FileManager/CCFileManager.cpp; sourceTree = "<group>"; };
+		44C3EB4D18CEF23F0068C59F /* CCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCFileManager.h; path = FileManager/CCFileManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +31,7 @@
 		44C3EB3C18CEEA790068C59F = {
 			isa = PBXGroup;
 			children = (
+				44C3EB5018CEF2850068C59F /* CCFilemanager */,
 				44C3EB4618CEEA790068C59F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -36,6 +44,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		44C3EB5018CEF2850068C59F /* CCFilemanager */ = {
+			isa = PBXGroup;
+			children = (
+				44C3EB4D18CEF23F0068C59F /* CCFileManager.h */,
+				44C3EB4C18CEF23F0068C59F /* CCFileManager.cpp */,
+			);
+			name = CCFilemanager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -43,6 +60,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C3EB4F18CEF23F0068C59F /* CCFileManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44C3EB4E18CEF23F0068C59F /* CCFileManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +225,7 @@
 				44C3EB4B18CEEA790068C59F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
