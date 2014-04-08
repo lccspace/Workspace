@@ -7,8 +7,8 @@
 //
 
 #include "CCBase64.h"
-#include "config.h"
-#include <string.h>
+
+//#include <string.h>
 /*
  base64的编码都是按字符串长度，以每3个8bit的字符为一组，针对每组，首先获取每个字符的ASCII编码，
  然后将ASCII编码转换成8bit的二进制，得到一组3*8=24bit的字节,
@@ -160,7 +160,7 @@ static const unsigned char kWebSafe_base64_dec_map[128] = {
  * Encode a buffer into base64 format
  */
 
-int base64_encode_fun(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen, const unsigned char *charSet)
+static int base64_encode_fun(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen, const unsigned char *charSet)
 {
 	int i, n;
 	int c1, c2, c3;
@@ -256,7 +256,7 @@ int base64_encode_fun(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen, 
  * Decode a base64-formatted buffer
  */
 
-int decodeQuantum(unsigned char *pDst, const char *pSrc, const unsigned char *charSet, int/*out*/ *piNeedLeastLength = NULL)
+static int decodeQuantum(unsigned char *pDst, const char *pSrc, const unsigned char *charSet, int/*out*/ *piNeedLeastLength = NULL)
 {
     int padding = 0;
     const unsigned char *s;
@@ -319,7 +319,7 @@ int decodeQuantum(unsigned char *pDst, const char *pSrc, const unsigned char *ch
     return ERR_OK;
 }
 
-int base64_decode_fun(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen, const unsigned char *charSet)
+static int base64_decode_fun(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen, const unsigned char *charSet)
 {
 	int i;
 	unsigned char *p;
@@ -459,3 +459,5 @@ int base64_decode_websafe(const char *pSrc, int iSrcLen, char *pDst, int *piDstL
 {
     return base64_decode_fun(pSrc, iSrcLen, pDst, piDstLen, kWebSafe_base64_dec_map);
 }
+
+

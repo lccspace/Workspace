@@ -8,18 +8,19 @@
 
 #ifndef __Core__CCBase64__
 #define __Core__CCBase64__
-#ifdef __cplusplus
-extern "C" {
-#endif
+
+#include "config.h"
+
+CC_EXPORT_BEGIN
     int base64_encode(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen);
     int base64_decode(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen);
     int base64_encode_websafe(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen);
     int base64_decode_websafe(const char *pSrc, int iSrcLen, char *pDst, int *piDstLen);
-#ifdef __cplusplus
-}
-#endif
+CC_EXPORT_END
 
-class CCBase64
+NS_CC_BEGIN
+
+class CC_DLL CCBase64
 {
 public:
 	CCBase64();
@@ -27,6 +28,6 @@ public:
 private:
     
 };
-
+NS_CC_END
 
 #endif /* defined(__Core__CCBase64__) */

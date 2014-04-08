@@ -9,6 +9,43 @@
 #ifndef Core_config_h
 #define Core_config_h
 
+#ifdef _DEBUG
+    #define LIBCORE_DEBUG
+#endif
+
+#ifdef __cplusplus
+    #define NS_CC_BEGIN namespace cc_lib_core {
+    #define NS_CC_END   }
+    #define USING_NS_CC using namespace cc_lib_core
+#else
+    #define NS_CC_BEGIN
+    #define NS_CC_END
+    #define USING_NS_CC
+#endif
+
+#ifndef NULL
+#ifdef __cplusplus
+    #define NULL    0
+#else
+    #define NULL    ((void *)0)
+#endif
+#endif
+
+#ifdef __cplusplus
+#define CC_EXPORT_BEGIN extern "C"  \
+{
+#else
+#define CC_EXPORT_BEGIN
+#endif
+
+#ifdef __cplusplus
+#define CC_EXPORT_END }
+#else
+#define CC_EXPORT_END
+#endif
+
+#define CC_DLL
+
 enum {
     ERR_UNKNOWN                 = -1,
     ERR_OK                      = 0,
@@ -21,7 +58,6 @@ enum {
     ERR_BASE64_INVALID_CHARACTER = 1001,
 };
 typedef int CCErrCode;
-#ifdef _DEBUG
-    #define LIBCORE_DEBUG
-#endif
+
+
 #endif
